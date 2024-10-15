@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01c4f686400ae2a2a6aae7f55d65835, type: 3}
+  m_Name: Roguelike Map Graph Color Set
+  m_EditorClassIdentifier: 
+  serializedObjectVersion:
+    version: 1.24.4
+  serializedLinkedSets:
+  - {fileID: 11400000, guid: 6d3f1673126157d12adb7aea3b2c489c, type: 2}
+  namedColorDataSet:
+    elements:
+    - id: badf271f-cdbf-42d7-826b-3b4141b96083
+      name: Combat Levels
+      color:
+        serializedVersion: 2
+        rgba: 4286899845
+    - id: a684a313-4bbf-40cb-8af8-24337467fca3
+      name: Reward Levels
+      color:
+        serializedVersion: 2
+        rgba: 4281022014
+    - id: 304355f6-a5d9-46b8-9b9e-c193f399cc69
+      name: Final Level
+      color:
+        serializedVersion: 2
+        rgba: 4278935911
+    - id: 2fc2a01a-ae43-494a-a15b-2a512b541294
+      name: Start Level
+      color:
+        serializedVersion: 2
+        rgba: 4281876547
+    orderedIds:
+    - badf271f-cdbf-42d7-826b-3b4141b96083
+    - a684a313-4bbf-40cb-8af8-24337467fca3
+    - 304355f6-a5d9-46b8-9b9e-c193f399cc69
+    - 2fc2a01a-ae43-494a-a15b-2a512b541294
+  serializedNames: []
+  serializedColors: []
