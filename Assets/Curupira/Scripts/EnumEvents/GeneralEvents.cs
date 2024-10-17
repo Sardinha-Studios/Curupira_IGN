@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public static class GeneralEvents
 {
     public enum LevelControllerEvents
     {
-        OnLevelEnd
+        OnLevelEnd, OnWaveEnds
     }
 }

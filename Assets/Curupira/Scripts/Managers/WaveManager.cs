@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
-
+using Sardinha.Events;
 
 public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 {
@@ -101,6 +101,7 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
     {
         if (enemiesInGame.Count == 0)
         {
+            EventManager.Trigger(GeneralEvents.LevelControllerEvents.OnWaveEnds);
             StartWave();
         } 
     }
@@ -114,6 +115,7 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
             currentWave++;
             if (currentWave <= maxWaveNumbers)
             {
+                EventManager.Trigger(GeneralEvents.LevelControllerEvents.OnWaveEnds);
                 SpawnWave();
             }
         }
@@ -129,7 +131,7 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
         }
         else
         {
-            Debug.Log("Fim de sala");
+            EventManager.Trigger(GeneralEvents.LevelControllerEvents.OnLevelEnd);
         }
     }
 
