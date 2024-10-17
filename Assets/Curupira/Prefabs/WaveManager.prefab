@@ -46,3 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDetail:
   - {fileID: 11400000, guid: 7b100fb6b824e904aa72ba7c6cdcc9d4, type: 2}
+  - {fileID: 11400000, guid: a068d9f869a02764c849db8ef1528aa3, type: 2}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemiesInGame: []
