@@ -4,6 +4,7 @@ using UnityEngine;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
 using Sardinha.Events;
+using DG.Tweening;
 
 public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 {
@@ -53,7 +54,11 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 
     private Vector3 SelectSpawnPoint()
     {
-        return spawnPoints[Random.Range(0, spawnPoints.Length - 1)].transform.position;
+        Vector3 spawnPosition = Vector3.zero;
+        spawnPosition.x = Random.Range(spawnPoints[0].transform.position.x, spawnPoints[1].transform.position.x);
+        spawnPosition.z = Random.Range(spawnPoints[0].transform.position.z, spawnPoints[2].transform.position.z);
+        return spawnPosition;
+
     }
 
     private GameObject SelectEnemyToSpawn()
@@ -64,7 +69,6 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 
     private void SpawnWave()
     {
-        Debug.Log("Starting Wave " + currentWave);
         
         if (currentWaveStart) return;
         
