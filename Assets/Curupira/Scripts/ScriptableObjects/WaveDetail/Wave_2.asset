@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveEnemies:
   - {fileID: 1496816152865682, guid: 33ed303d4bdb45946bb0a32639cb568f, type: 3}
-  waveMaxTime: 120
+  waveMaxTime: 60
   enemieQuantity: 5

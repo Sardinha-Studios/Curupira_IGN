@@ -4,6 +4,7 @@ using UnityEngine;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
 
+
 public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 {
 
@@ -18,12 +19,10 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 
     private int currentWave = 0;
     private int maxWaveNumbers;
-
     private bool currentWaveStart = false;
-
-    // Contar o timer de fim de wave
-    //
-
+    private bool startWaveTimer = false;
+    private float currentWaveTime;
+    
     private void OnEnable()
     {
         this.MMEventStartListening<MMLifeCycleEvent>();
@@ -39,13 +38,17 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
     {
         maxWaveNumbers = waveDetail.Length - 1;
         enemiesInGame = new List<GameObject>();
-        SpawnwWave();
+        SpawnWave();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (startWaveTimer)
+        {
+            currentWaveTime -= Time.deltaTime;
+            CheckWaveTimer();
+        }
     }
 
     private Vector3 SelectSpawnPoint()
@@ -59,9 +62,12 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
         return waveEnemies[Random.Range(0, waveEnemies.Length - 1)];
     }
 
-    private void SpawnwWave()
+    private void SpawnWave()
     {
         Debug.Log("Starting Wave " + currentWave);
+        
+        if (currentWaveStart) return;
+        
         for (int i = 0; i < waveDetail[currentWave].enemieQuantity; i++)
         {
             GameObject enemyToSpawn = SelectEnemyToSpawn();
@@ -69,8 +75,9 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
             GameObject enemy = Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
             enemiesInGame.Add(enemy);
         }
-
+        currentWaveTime = waveDetail[currentWave].waveMaxTime;
         currentWaveStart = true;
+        startWaveTimer = true;
     }
 
     public void OnMMEvent(MMLifeCycleEvent lifeCycleEvent)
@@ -94,16 +101,43 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
     {
         if (enemiesInGame.Count == 0)
         {
+            StartWave();
+        } 
+    }
+
+    private void CheckWaveConclusionOnTime()
+    {
+        if (startWaveTimer)
+        {
+            startWaveTimer = false;
             currentWaveStart = false;
             currentWave++;
             if (currentWave <= maxWaveNumbers)
             {
-                SpawnwWave();
+                SpawnWave();
             }
-            else
-            {
-                Debug.Log("Fim de sala");
-            }
+        }
+    }
+
+    private void StartWave()
+    {
+        currentWaveStart = false;
+        currentWave++;
+        if (currentWave <= maxWaveNumbers)
+        {
+            SpawnWave();
+        }
+        else
+        {
+            Debug.Log("Fim de sala");
+        }
+    }
+
+    private void CheckWaveTimer()
+    {
+        if (currentWaveTime <= 0 && startWaveTimer)
+        {
+            CheckWaveConclusionOnTime();
         }
     }
 }
