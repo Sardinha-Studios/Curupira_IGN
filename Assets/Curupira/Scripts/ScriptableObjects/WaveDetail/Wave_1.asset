@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Wave_1
   m_EditorClassIdentifier: 
   waveEnemies:
-  - {fileID: 1496816152865682, guid: 33ed303d4bdb45946bb0a32639cb568f, type: 3}
+  - {fileID: 8766139571438957297, guid: 819772873db9f13469b15e218772016b, type: 3}
   waveMaxTime: 60
-  enemieQuantity: 5
+  enemieQuantity: 1
