@@ -76,6 +76,10 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
     public void SpawnWave()
     {
         Debug.Log(gameObject.transform.parent);
+        if (waveDetail.Length == 0)
+        {
+            return;
+        }
         if (!waveMangerStarted)
         {
             waveMangerStarted = true;

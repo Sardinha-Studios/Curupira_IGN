@@ -6,6 +6,6 @@ public static class GeneralEvents
 {
     public enum LevelControllerEvents
     {
-        OnLevelEnd, OnWaveEnds
+        OnLevelEnd, OnWaveEnds, RequestNextRoom, NextRoomSorted
     }
 }

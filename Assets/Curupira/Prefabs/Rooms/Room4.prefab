@@ -562,7 +562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc81bd6367bddb49b8407a0d9ddb642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LevelDoor: {fileID: 2652652621189171833}
+  levelDoor: {fileID: 2747716875879252812}
+  roomSpawnPoint: {fileID: 3255010816566854186}
 --- !u!1 &1912435989619703664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,12 +2133,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 6163055670962743246}
+        m_TargetAssemblyTypeName: TeleporterController, Assembly-CSharp
+        m_MethodName: RequestNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnPlayerEntersRoom:
     m_PersistentCalls:
       m_Calls: []
   OnPlayerExitsRoom:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6163055670962743246}
+        m_TargetAssemblyTypeName: TeleporterController, Assembly-CSharp
+        m_MethodName: UnregisterEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ActivationList: []
 --- !u!1 &7221954892846980096
 GameObject:
@@ -2186,7 +2211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDetail:
   - {fileID: 11400000, guid: 7b100fb6b824e904aa72ba7c6cdcc9d4, type: 2}
-  - {fileID: 11400000, guid: a068d9f869a02764c849db8ef1528aa3, type: 2}
   spawnPoints:
   - {fileID: 4888610098906207496}
   - {fileID: 7988192652886311779}

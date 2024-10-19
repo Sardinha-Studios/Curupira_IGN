@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7916459684342995838
 Transform:
   m_ObjectHideFlags: 0
@@ -866,9 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a8cd16d31e35d47a3f5d2cf2e8aebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveDetail:
-  - {fileID: 11400000, guid: 7b100fb6b824e904aa72ba7c6cdcc9d4, type: 2}
-  - {fileID: 11400000, guid: a068d9f869a02764c849db8ef1528aa3, type: 2}
+  waveDetail: []
   spawnPoints:
   - {fileID: 7194235568959747641}
   - {fileID: 354527414049359060}
@@ -902,7 +900,7 @@ GameObject:
   - component: {fileID: 2387271980895234411}
   m_Layer: 0
   m_Name: Room5
-  m_TagString: Untagged
+  m_TagString: BossRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -994,7 +992,19 @@ MonoBehaviour:
       m_Calls: []
   OnPlayerExitsRoom:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4661102199948017527}
+        m_TargetAssemblyTypeName: TeleporterController, Assembly-CSharp
+        m_MethodName: UnregisterEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ActivationList: []
 --- !u!1 &4131454971384145022
 GameObject:
@@ -1678,7 +1688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &965215141972794200
 Transform:
   m_ObjectHideFlags: 0
@@ -1707,7 +1717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc81bd6367bddb49b8407a0d9ddb642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LevelDoor: {fileID: 9034312240123908338}
+  levelDoor: {fileID: 554732064325883396}
+  roomSpawnPoint: {fileID: 5812213351217219097}
 --- !u!1 &5766755358624000162
 GameObject:
   m_ObjectHideFlags: 0
