@@ -4,8 +4,7 @@ using UnityEngine;
 using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
 using Sardinha.Events;
-using DG.Tweening;
-
+using UnityEngine.Events;
 public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 {
 
@@ -22,11 +21,15 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
     private int maxWaveNumbers;
     private bool currentWaveStart = false;
     private bool startWaveTimer = false;
+    private bool waveMangerStarted = false;
     private float currentWaveTime;
+
+    public UnityEvent onRoomEnds;
     
     private void OnEnable()
     {
         this.MMEventStartListening<MMLifeCycleEvent>();
+
     }
 
     private void OnDisable()
@@ -39,12 +42,15 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
     {
         maxWaveNumbers = waveDetail.Length - 1;
         enemiesInGame = new List<GameObject>();
-        SpawnWave();
+        //SpawnWave();
+        //SpawnWave();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!waveMangerStarted) return;
+
         if (startWaveTimer)
         {
             currentWaveTime -= Time.deltaTime;
@@ -67,9 +73,14 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
         return waveEnemies[Random.Range(0, waveEnemies.Length - 1)];
     }
 
-    private void SpawnWave()
+    public void SpawnWave()
     {
-        
+        Debug.Log(gameObject.transform.parent);
+        if (!waveMangerStarted)
+        {
+            waveMangerStarted = true;
+        }
+
         if (currentWaveStart) return;
         
         for (int i = 0; i < waveDetail[currentWave].enemieQuantity; i++)
@@ -86,6 +97,8 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 
     public void OnMMEvent(MMLifeCycleEvent lifeCycleEvent)
     {
+        if (!waveMangerStarted) return;
+
         if (lifeCycleEvent.MMLifeCycleEventType == MMLifeCycleEventTypes.Death)
         {
             RemoveEnemy(lifeCycleEvent.AffectedHealth.gameObject);
@@ -136,6 +149,9 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
         else
         {
             EventManager.Trigger(GeneralEvents.LevelControllerEvents.OnLevelEnd);
+            waveMangerStarted = false;
+            onRoomEnds?.Invoke();
+            onRoomEnds.RemoveAllListeners();
         }
     }
 
