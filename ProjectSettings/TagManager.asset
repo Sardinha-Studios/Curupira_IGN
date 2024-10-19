@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - World
   - NoMask
+  - RoomSpawnPoint
+  - BossRoom
   layers:
   - Default
   - TransparentFX
