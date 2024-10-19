@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dded20f928340d3bd4366169cdae5a5, type: 3}
+  m_Name: Roguelike Map Graph Prefab Set
+  m_EditorClassIdentifier: 
+  serializedObjectVersion:
+    version: 1.24.4
+  prefabWidth: 1
+  prefabHeight: 1
+  prefabTypes: []
+  openPrefabSet:
+    elements:
+    - id: 551341c6-d771-4665-a4ed-a855f6f30627
+      name: Combat Levels
+      isWeightEnabled: 1
+      totalWeight: 1.5
+      prefabs:
+      - weight: 1
+        prefab: {fileID: 1401851951674739754, guid: 7278ed64a233030b787b12bc54c55831,
+          type: 3}
+      - weight: 0.5
+        prefab: {fileID: 1401851951674739754, guid: 1db817cca4ffceb61ac19efe1d0f4064,
+          type: 3}
+    - id: 035d9bc2-aac4-40e3-a4d2-511c48cb279c
+      name: Reward Levels
+      isWeightEnabled: 0
+      totalWeight: 4
+      prefabs:
+      - weight: 1
+        prefab: {fileID: 1401851951674739754, guid: 06b1006377527f29db5b2f73ec0d2eef,
+          type: 3}
+      - weight: 1
+        prefab: {fileID: 1401851951674739754, guid: 2ee168af1448d847588d5be4746a06ed,
+          type: 3}
+      - weight: 1
+        prefab: {fileID: 1401851951674739754, guid: 2f5db7b108a8fe428bd966d991c3aa51,
+          type: 3}
+      - weight: 1
+        prefab: {fileID: 1401851951674739754, guid: 74d7b159e0f6f337a8a65762e02ed8bb,
+          type: 3}
+    - id: 9f87b469-fc81-46c9-8992-7c2754289dde
+      name: Final Level
+      isWeightEnabled: 0
+      totalWeight: 1
+      prefabs:
+      - weight: 1
+        prefab: {fileID: 1401851951674739754, guid: 6d33999601f86b3dc9900e6f2d047a23,
+          type: 3}
+    - id: 2195a5a0-faed-4c3a-8e97-c28348ccff40
+      name: Start Level
+      isWeightEnabled: 0
+      totalWeight: 1
+      prefabs:
+      - weight: 1
+        prefab: {fileID: 1401851951674739754, guid: 7278ed64a233030b787b12bc54c55831,
+          type: 3}
+    orderedIds:
+    - 551341c6-d771-4665-a4ed-a855f6f30627
+    - 035d9bc2-aac4-40e3-a4d2-511c48cb279c
+    - 9f87b469-fc81-46c9-8992-7c2754289dde
+    - 2195a5a0-faed-4c3a-8e97-c28348ccff40
