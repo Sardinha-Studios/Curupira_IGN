@@ -1,11 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-namespace PolygonArsenal
-{
-
 [AddComponentMenu("Camera-Control/Mouse drag Orbit with zoom")]
-
 public class PolygonOrbit : MonoBehaviour
 {
     public Transform target;
@@ -49,7 +44,7 @@ public class PolygonOrbit : MonoBehaviour
             Quaternion toRotation = Quaternion.Euler(rotationXAxis, rotationYAxis, 0);
             Quaternion rotation = toRotation;
 
-            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
+            distance = Mathf.Clamp(distance - Input.GetAxis("Player1_Vertical") * 5, distanceMin, distanceMax);
             RaycastHit hit;
             if (Physics.Linecast(target.position, transform.position, out hit))
             {
@@ -72,5 +67,4 @@ public class PolygonOrbit : MonoBehaviour
             angle -= 360F;
         return Mathf.Clamp(angle, min, max);
     }
-}
 }

@@ -142,6 +142,7 @@ namespace MoreMountains.TopDownEngine
 			Cooldown.Start();
 
 			_movement.ChangeState(CharacterStates.MovementStates.Dashing);
+			StartCoroutine(DisableDashState());
 			_dashing = true;
 			_dashTimer = 0f;
 			_dashOrigin = this.transform.position;
@@ -157,6 +158,12 @@ namespace MoreMountains.TopDownEngine
 			}
 
 			HandleDashMode();
+		}
+
+		private IEnumerator DisableDashState()
+		{
+			yield return new WaitForEndOfFrame();
+			_movement.ChangeState(CharacterStates.MovementStates.Idle);
 		}
 
 		protected virtual void HandleDashMode()
