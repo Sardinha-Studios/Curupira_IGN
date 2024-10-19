@@ -2503,7 +2503,7 @@ MonoBehaviour:
   CameraMode: 2
   CurrentRoom: {fileID: 7014706899584018322}
   TargetRoom: {fileID: 0}
-  TriggerFade: 0
+  TriggerFade: 1
   FaderID: 0
   FadeTween:
     MMTweenDefinitionType: 0
