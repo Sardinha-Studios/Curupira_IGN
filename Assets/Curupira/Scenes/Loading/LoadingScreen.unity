@@ -536,12 +536,6 @@ CanvasGroup:
     type: 3}
   m_PrefabInstance: {fileID: 8425766352768941378}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &1858372246 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 8937881704479190982, guid: ef8ef1be517adff4b92caff8d08db032,
-    type: 3}
-  m_PrefabInstance: {fileID: 8425766352768941378}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1904868558
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +568,7 @@ MonoBehaviour:
   LoadingText: {fileID: 620337399}
   LoadingProgressBar: {fileID: 485648907}
   LoadingAnimation: {fileID: 1383385375}
-  LoadingCompleteAnimation: {fileID: 1858372246}
+  LoadingCompleteAnimation: {fileID: 8425766352768941379}
   StartFadeDuration: 0.5
   ProgressBarSpeed: 2
   ExitFadeDuration: 0.5
@@ -714,6 +708,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef8ef1be517adff4b92caff8d08db032, type: 3}
+--- !u!225 &8425766352768941379 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 6213495517926548769, guid: ef8ef1be517adff4b92caff8d08db032,
+    type: 3}
+  m_PrefabInstance: {fileID: 8425766352768941378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
