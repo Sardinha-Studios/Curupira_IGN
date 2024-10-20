@@ -15,4 +15,4 @@ MonoBehaviour:
   waveEnemies:
   - {fileID: 8766139571438957297, guid: 819772873db9f13469b15e218772016b, type: 3}
   waveMaxTime: 60
-  enemieQuantity: 1
+  enemieQuantity: 2

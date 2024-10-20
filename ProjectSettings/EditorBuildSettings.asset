@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Curupira/Scenes/Menu/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Curupira/Scenes/Gameplay/Gameplay_MinimalSword3D.unity
-    guid: 6b7208faebfa5e94b8ed9de17450a853
+    path: Assets/Curupira/Scenes/Gameplay/Lobby.unity
+    guid: 3e86843452108e542b9f589cbad1de7f
+  - enabled: 1
+    path: Assets/Curupira/Scenes/Gameplay/Gameplay.unity
+    guid: 4b4a2c0bfbe1db54d9b0203be20ad6a8
   m_configObjects: {}

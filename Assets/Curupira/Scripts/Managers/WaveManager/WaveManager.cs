@@ -7,12 +7,11 @@ using Sardinha.Events;
 using UnityEngine.Events;
 public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
 {
-
     [SerializeField]
     private WaveDetail[] waveDetail;
 
     [SerializeField]
-    private GameObject [] spawnPoints;
+    private List<GameObject> spawnPoints;
     
     [SerializeField]
     private List<GameObject> enemiesInGame;
@@ -37,13 +36,10 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
         this.MMEventStopListening<MMLifeCycleEvent>();
     }
     
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         maxWaveNumbers = waveDetail.Length - 1;
         enemiesInGame = new List<GameObject>();
-        //SpawnWave();
-        //SpawnWave();
     }
 
     // Update is called once per frame
@@ -58,13 +54,17 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
         }
     }
 
-    private Vector3 SelectSpawnPoint()
+    private Vector3 SelectSpawnPointsBetween()
     {
         Vector3 spawnPosition = Vector3.zero;
         spawnPosition.x = Random.Range(spawnPoints[0].transform.position.x, spawnPoints[1].transform.position.x);
         spawnPosition.z = Random.Range(spawnPoints[0].transform.position.z, spawnPoints[2].transform.position.z);
         return spawnPosition;
+    }
 
+    private Transform SelectSpawnPoint()
+    {
+        return spawnPoints[Random.Range(0, spawnPoints.Count)].transform;
     }
 
     private GameObject SelectEnemyToSpawn()
@@ -76,24 +76,34 @@ public class WaveManager : MonoBehaviour, MMEventListener<MMLifeCycleEvent>
     public void SpawnWave()
     {
         Debug.Log(gameObject.transform.parent);
-        if (waveDetail.Length == 0)
-        {
-            return;
-        }
-        if (!waveMangerStarted)
-        {
-            waveMangerStarted = true;
-        }
 
-        if (currentWaveStart) return;
-        
+        if (waveDetail.Length == 0)
+            return;
+
+        if (!waveMangerStarted)
+            waveMangerStarted = true;
+
+        if (currentWaveStart)
+            return;
+
+        List<GameObject> availableSpawnPoints = new List<GameObject>(spawnPoints);
         for (int i = 0; i < waveDetail[currentWave].enemieQuantity; i++)
         {
             GameObject enemyToSpawn = SelectEnemyToSpawn();
-            Vector3 spawnPosition = SelectSpawnPoint();
-            GameObject enemy = Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+
+            int randomIndex = Random.Range(0, availableSpawnPoints.Count);
+            Transform spawnPoint = availableSpawnPoints[randomIndex].transform;
+            availableSpawnPoints.RemoveAt(randomIndex);
+
+            GameObject enemy = Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
             enemiesInGame.Add(enemy);
+
+            if (availableSpawnPoints.Count == 0)
+            {
+                availableSpawnPoints = new List<GameObject>(spawnPoints);
+            }
         }
+
         currentWaveTime = waveDetail[currentWave].waveMaxTime;
         currentWaveStart = true;
         startWaveTimer = true;

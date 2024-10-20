@@ -116,8 +116,8 @@ MonoBehaviour:
   Flipped: 0
   MeleeDamageAreaMode: 0
   DamageAreaShape: 2
-  AreaOffset: {x: 0, y: 0, z: -0.5}
-  AreaSize: {x: 4, y: 2, z: 3}
+  AreaOffset: {x: 0, y: 0, z: 0.6}
+  AreaSize: {x: 5, y: 2, z: 4}
   TriggerFilter: 195
   HitDamageableFeedback: {fileID: 2428397753823877427}
   HitNonDamageableFeedback: {fileID: 0}
@@ -209,8 +209,8 @@ MonoBehaviour:
   Flipped: 0
   MeleeDamageAreaMode: 0
   DamageAreaShape: 2
-  AreaOffset: {x: 0, y: 0, z: -0.5}
-  AreaSize: {x: 4, y: 2, z: 3}
+  AreaOffset: {x: 0, y: 0, z: 0.6}
+  AreaSize: {x: 5, y: 2, z: 4}
   TriggerFilter: 195
   HitDamageableFeedback: {fileID: 2428397753823877427}
   HitNonDamageableFeedback: {fileID: 0}
@@ -245,7 +245,7 @@ MonoBehaviour:
   TriggerMode: 0
   DelayBeforeUse: 0.03
   DelayBeforeUseReleaseInterruption: 0
-  TimeBetweenUses: 0.48
+  TimeBetweenUses: 0.55
   TimeBetweenUsesReleaseInterruption: 0
   UseBurstMode: 0
   BurstLength: 3
@@ -302,8 +302,8 @@ MonoBehaviour:
   Flipped: 0
   MeleeDamageAreaMode: 0
   DamageAreaShape: 2
-  AreaOffset: {x: 0, y: 0, z: -0.75}
-  AreaSize: {x: 5, y: 2, z: 3.5}
+  AreaOffset: {x: 0, y: 0, z: 0.9}
+  AreaSize: {x: 6, y: 2, z: 5}
   TriggerFilter: 195
   HitDamageableFeedback: {fileID: 4158046870916795532}
   HitNonDamageableFeedback: {fileID: 0}
