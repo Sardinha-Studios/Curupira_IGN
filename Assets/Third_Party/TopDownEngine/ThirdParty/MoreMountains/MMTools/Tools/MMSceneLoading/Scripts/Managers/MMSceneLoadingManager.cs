@@ -62,6 +62,11 @@ namespace MoreMountains.Tools
 		/// the delay (in seconds) before leaving the scene when complete
 		public float LoadCompleteDelay=0.5f;
 
+		[Header("Start")]
+		public string StartScene = "MainMenu";
+		public bool loadOnStart = false;
+
+
 		protected AsyncOperation _asyncOperation;
 		protected static string _sceneToLoad = "";
 		protected float _fadeDuration = 0.5f;
@@ -105,11 +110,17 @@ namespace MoreMountains.Tools
 			_tween = new MMTweenType(MMTween.MMTweenCurve.EaseOutCubic);
 			_progressBarImage = LoadingProgressBar.GetComponent<Image>();
             
-			_loadingTextValue =LoadingText.text;
+			_loadingTextValue = LoadingText.text;
+
+			if (loadOnStart)
+			{
+				_sceneToLoad = StartScene;
+			}
+
 			if (!string.IsNullOrEmpty(_sceneToLoad))
 			{
 				StartCoroutine(LoadAsynchronously());
-			}        
+			}
 		}
 
 		/// <summary>
