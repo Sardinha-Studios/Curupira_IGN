@@ -20,6 +20,6 @@ public class UpdateBossHealthBar : MonoBehaviour
 
     public void ActiveHealthBar(bool active)
     {
-        GUIManager.Instance.bossHealthBar.gameObject.SetActive(active);
+        GUIManager.Instance.bossHealthBar?.gameObject.SetActive(active);
     }
 }

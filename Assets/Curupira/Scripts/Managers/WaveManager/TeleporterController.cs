@@ -12,6 +12,11 @@ public class TeleporterController : MonoBehaviour
     [SerializeField]
     private Teleporter roomSpawnPoint;
 
+    [SerializeField]
+    private Room nextRoom;
+
+    private bool isUnregister = false;
+
     private void Awake()
     {
         EventManager.Register<GameObject>(GeneralEvents.LevelControllerEvents.NextRoomSorted, SortedRoomListener);
@@ -24,27 +29,29 @@ public class TeleporterController : MonoBehaviour
 
     public void RequestNextLevel()
     {
-        EventManager.Trigger(GeneralEvents.LevelControllerEvents.RequestNextRoom, roomSpawnPoint.gameObject);
+        // EventManager.Trigger(GeneralEvents.LevelControllerEvents.RequestNextRoom, roomSpawnPoint.gameObject);
+        SortedRoomListener(null);
     }
 
     private void SortedRoomListener(GameObject sortedSpawnPoint)
     {
-        Room targetRoom = sortedSpawnPoint.transform.parent.GetComponent<Room>();
-        levelDoor.TargetRoom = targetRoom;
-        levelDoor.Destination = sortedSpawnPoint.GetComponent<Teleporter>();
-
+        // Room targetRoom = sortedSpawnPoint.transform.parent.GetComponent<Room>();
+        levelDoor.TargetRoom = nextRoom;
+        // levelDoor.Destination = sortedSpawnPoint.GetComponent<Teleporter>();
     }
 
     private void OnDestroy()
     {
-        EventManager.Unregister<GameObject>(GeneralEvents.LevelControllerEvents.NextRoomSorted, SortedRoomListener);
+        if (!isUnregister)
+            EventManager.Unregister<GameObject>(GeneralEvents.LevelControllerEvents.NextRoomSorted, SortedRoomListener);
     }
 
     public void UnregisterEvent()
     {
-        EventManager.Unregister<GameObject>(GeneralEvents.LevelControllerEvents.NextRoomSorted, SortedRoomListener);
+        if (!isUnregister)
+        {
+            EventManager.Unregister<GameObject>(GeneralEvents.LevelControllerEvents.NextRoomSorted, SortedRoomListener);
+            isUnregister = true;
+        }
     }
-    //private void 
-
-
 }

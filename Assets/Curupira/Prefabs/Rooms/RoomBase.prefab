@@ -1253,6 +1253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDoor: {fileID: 5286276254473111490}
   roomSpawnPoint: {fileID: 6520631624000783636}
+  targetRoom: {fileID: 3276888761551823173}
 --- !u!1 &5525751452253959575
 GameObject:
   m_ObjectHideFlags: 0
