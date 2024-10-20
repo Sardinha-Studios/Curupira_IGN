@@ -11,9 +11,11 @@ Material:
   m_Shader: {fileID: 4800000, guid: 6697e1f185bc8b840a2f02567abf15b5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _RECEIVE_SHADOWS_OFF
   m_InvalidKeywords:
   - _ALPHATEST_ON
+  - _RECEIVESHADOWS_OFF
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -206,6 +208,7 @@ Material:
     - _FrostingFalloff: 1
     - _FrostingHeight: 1
     - _FrostingSwitch: 0
+    - _FrostingWorldObjectSwitch2: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -238,7 +241,7 @@ Material:
     - _PulseTiling: 0.03
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _Small_Wave: 2.1
     - _Smoothness: 0.2
     - _SmoothnessTextureChannel: 0
@@ -289,8 +292,8 @@ Material:
     - _GustHighlight: {r: 0.1132075, g: 0.1132075, b: 0.1132075, a: 0}
     - _GustSmoothing: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _LeafBaseColour: {r: 0, g: 0, b: 0, a: 0}
-    - _LeafNoiseColour: {r: 0.31141672, g: 0.4716981, b: 0.09567462, a: 0}
-    - _LeafNoiseLargeColour: {r: 0.3769504, g: 0.43137255, b: 0, a: 0}
+    - _LeafNoiseColour: {r: 0, g: 0, b: 0, a: 0}
+    - _LeafNoiseLargeColour: {r: 0, g: 0, b: 0, a: 0}
     - _LeafTint: {r: 0.07843138, g: 0.02015968, b: 0, a: 0}
     - _SnowColour: {r: 0.7718434, g: 1, b: 0.1839623, a: 0}
     - _Tint: {r: 0, g: 0, b: 0, a: 0}
