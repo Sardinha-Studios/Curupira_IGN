@@ -1538,6 +1538,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545944167}
   m_CullTransparentMesh: 1
+--- !u!114 &567131464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6828416514131652662, guid: 2bf725a6763c7174e8432c1b2ebfe41c,
+    type: 3}
+  m_PrefabInstance: {fileID: 341623787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bece511726880043a91642f26e8f94d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568033597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,7 +2103,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 846666000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 567131464}
+        m_TargetAssemblyTypeName: Popup, Sardinha
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 519325547}
+        m_TargetAssemblyTypeName: Popup, Sardinha
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &846666000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3743,7 +3779,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<b>Game Design</b>\r\n\rCaio Rodrigues\nJo\xE3o Victor\n\n<b>Programmers\r</b>\r\nLucas
-    Lima\nKazu\n\r\n<b>UI/UX</b>\r\nHannah Costa"
+    Lima\nMatheus Kazuo\n\r\n<b>UI/UX</b>\r\nHannah Costa"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

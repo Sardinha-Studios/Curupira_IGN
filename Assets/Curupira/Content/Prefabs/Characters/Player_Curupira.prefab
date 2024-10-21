@@ -19237,9 +19237,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RefillMode: 0
   TargetHealth: {fileID: 4043059811286727214}
-  CooldownAfterHit: 1
+  CooldownAfterHit: 3
   RefillHealth: 1
-  HealthPerSecond: 10
+  HealthPerSecond: 1
   HealthPerBurst: 5
   DurationBetweenBursts: 2
 --- !u!114 &3929844402490206930
@@ -19258,6 +19258,7 @@ MonoBehaviour:
   characterDash: {fileID: 8376942452277364823}
   characterMovement: {fileID: 1863534257609903325}
   characterRun: {fileID: 1731835906439344941}
+  swordPowerUpController: {fileID: 0}
 --- !u!1 &8885819738851111037
 GameObject:
   m_ObjectHideFlags: 0
