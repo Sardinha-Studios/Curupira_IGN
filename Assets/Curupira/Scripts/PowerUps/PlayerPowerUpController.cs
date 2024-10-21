@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.TopDownEngine;
 using Sardinha.Events;
+using System.Net;
 
 public class PlayerPowerUpController : MonoBehaviour
 {
@@ -19,14 +20,20 @@ public class PlayerPowerUpController : MonoBehaviour
     [SerializeField]
     private CharacterRun characterRun;
 
+    [SerializeField]
+    private SwordPowerUpController swordPowerUpController;
+
 
     private void Awake()
     {
         EventManager.Register<float, float>(GeneralEvents.PowerUpEvents.OnDashUp, OnDashUpListener);
         EventManager.Register<float, float>(GeneralEvents.PowerUpEvents.OnVelocityUp, OnVelocityUpListener);
+        EventManager.Register<SwordPowerUpController>(GeneralEvents.PowerUpEvents.OnSwordSpawned, OnSwordSpawnedListener);
+        EventManager.Register<float, float>(GeneralEvents.PowerUpEvents.OnSwordAttackUp, OnSwordAttackUpListener);
         characterDash = GetComponent<CharacterDash3D>();
         characterRun = GetComponent<CharacterRun>();
         characterMovement = GetComponent<CharacterMovement>();
+        swordPowerUpController = GetComponentInChildren<SwordPowerUpController>();
     }
 
     private void LoadPowerUpsValues()
@@ -45,12 +52,17 @@ public class PlayerPowerUpController : MonoBehaviour
         {
             characterRun.RunSpeed = powerUpValues.runVelocity;
         }
+
+        if (powerUpValues.swordDamage != 0)
+        {
+            swordPowerUpController.SetDamageValue(powerUpValues.swordDamage);
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        LoadPowerUpsValues();
+   
     }
 
     // Update is called once per frame
@@ -66,6 +78,7 @@ public class PlayerPowerUpController : MonoBehaviour
         if (newDashvalue >= dashMaxDistance)
         {
             characterDash.DashDistance = dashMaxDistance;
+            powerUpValues.dashDistance = dashMaxDistance;
         }
         else
         {
@@ -83,6 +96,7 @@ public class PlayerPowerUpController : MonoBehaviour
         if (characterWalkValue >= maxVelocity)
         {
             characterMovement.WalkSpeed = maxVelocity;
+            powerUpValues.walkVelocity = maxVelocity;
         }
         else
         {
@@ -93,6 +107,7 @@ public class PlayerPowerUpController : MonoBehaviour
         if (characerRunValue >= maxVelocity)
         {
             characterRun.RunSpeed = maxVelocity;
+            powerUpValues.runVelocity = maxVelocity;
         }
         else
         {
@@ -102,9 +117,31 @@ public class PlayerPowerUpController : MonoBehaviour
 
     }
 
-    private void OnDestroy()
+    private void OnSwordAttackUpListener(float attackToAdd, float maxAttack)
     {
+        float newAttack = attackToAdd + swordPowerUpController.GetWeaponDamege();
+        if (newAttack >= maxAttack)
+        {
+            swordPowerUpController.SetDamageValue(maxAttack);
+            powerUpValues.swordDamage = newAttack;
+        }
+        else
+        {
+            swordPowerUpController.SetDamageValue(newAttack);
+            powerUpValues.swordDamage = newAttack;
+        }
+    }
+
+    private void OnSwordSpawnedListener(SwordPowerUpController swordPowerUpControllerValue)
+    {
+        swordPowerUpController = swordPowerUpControllerValue;
+        LoadPowerUpsValues();
+    }
+    private void OnDestroy()
+    {   
         EventManager.Unregister<float, float>(GeneralEvents.PowerUpEvents.OnDashUp, OnDashUpListener);
         EventManager.Unregister<float, float>(GeneralEvents.PowerUpEvents.OnVelocityUp, OnVelocityUpListener);
+        EventManager.Unregister<float, float>(GeneralEvents.PowerUpEvents.OnSwordAttackUp, OnSwordAttackUpListener);
+        EventManager.Unregister<SwordPowerUpController>(GeneralEvents.PowerUpEvents.OnSwordSpawned, OnSwordSpawnedListener);
     }
 }

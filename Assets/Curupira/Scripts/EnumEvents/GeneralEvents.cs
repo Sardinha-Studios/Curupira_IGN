@@ -14,6 +14,6 @@ public static class GeneralEvents
 
     public enum PowerUpEvents
     {
-        OnVelocityUp, OnDashUp
+        OnVelocityUp, OnDashUp, OnSwordAttackUp, OnSwordSpawned
     }
 }
