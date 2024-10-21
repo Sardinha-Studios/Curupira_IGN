@@ -16533,6 +16533,7 @@ MonoBehaviour:
   HUD: {fileID: 1887182704392805}
   HealthBars:
   - {fileID: 114016460494128601}
+  bossHealthBar: {fileID: 0}
   DashBars:
   - {fileID: 114958320811238133}
   AmmoDisplays:
