@@ -2356,6 +2356,7 @@ Transform:
   - {fileID: 2160930664258964743}
   - {fileID: 5679856905247704834}
   - {fileID: 3169878596180640948}
+  - {fileID: 3043694461565563665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8210249376127623169
@@ -3263,9 +3264,9 @@ MonoBehaviour:
   onRoomEnds:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6656714697370411870}
-        m_TargetAssemblyTypeName: TeleporterController, Assembly-CSharp
-        m_MethodName: OnRoomEndsListener
+      - m_Target: {fileID: 9149962399910428939}
+        m_TargetAssemblyTypeName: PowerUpSpawner, Assembly-CSharp
+        m_MethodName: SpawnPowerUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 114096976402940132}
   - component: {fileID: 114049947547974234}
   - component: {fileID: 2463841059975174656}
+  - component: {fileID: 3807913255719270859}
   m_Layer: 10
   m_Name: CurupiraSwordFast
   m_TagString: Untagged
@@ -378,6 +379,22 @@ MonoBehaviour:
     m_Bits: 9
   MaximumSlopeElevation: 50
   AvoidNullAim: 1
+--- !u!114 &3807913255719270859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831551693771866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e986e996d2f63944f9e5a5d6b5c02c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordHits:
+  - {fileID: 114594623923584052}
+  - {fileID: 114290391021249986}
+  - {fileID: 114096976402940132}
 --- !u!1 &2635071102145302528
 GameObject:
   m_ObjectHideFlags: 0

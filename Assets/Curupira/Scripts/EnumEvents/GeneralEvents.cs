@@ -11,4 +11,9 @@ public static class GeneralEvents
         RequestNextRoom,
         NextRoomSorted
     }
+
+    public enum PowerUpEvents
+    {
+        OnVelocityUp, OnDashUp, OnSwordAttackUp, OnSwordSpawned
+    }
 }

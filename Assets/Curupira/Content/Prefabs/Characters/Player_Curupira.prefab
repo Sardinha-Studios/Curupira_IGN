@@ -18657,6 +18657,7 @@ GameObject:
   - component: {fileID: 4685730436045831433}
   - component: {fileID: 4043059811286727214}
   - component: {fileID: 7357222709591150800}
+  - component: {fileID: 3929844402490206930}
   m_Layer: 10
   m_Name: Player_Curupira
   m_TagString: Player
@@ -19241,6 +19242,22 @@ MonoBehaviour:
   HealthPerSecond: 10
   HealthPerBurst: 5
   DurationBetweenBursts: 2
+--- !u!114 &3929844402490206930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8519443410971012609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e656567c1838e9744bdb0fc2631a873a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpValues: {fileID: 11400000, guid: 763052cfbff92eb409dd9e3eb88772e0, type: 2}
+  characterDash: {fileID: 8376942452277364823}
+  characterMovement: {fileID: 1863534257609903325}
+  characterRun: {fileID: 1731835906439344941}
 --- !u!1 &8885819738851111037
 GameObject:
   m_ObjectHideFlags: 0
