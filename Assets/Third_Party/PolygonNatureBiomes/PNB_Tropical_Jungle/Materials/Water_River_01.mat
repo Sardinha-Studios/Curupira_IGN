@@ -268,14 +268,14 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color3: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 0}
     - _Color4: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 0}
-    - _DeepColour: {r: 0.057518188, g: 0.333, b: 0.30878183, a: 0}
+    - _DeepColour: {r: 0.33333334, g: 0.30733925, b: 0.058823526, a: 0}
     - _DepthGlowColour: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.5199804, g: 0.8962264, b: 0.8460602, a: 1}
+    - _FoamColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
     - _FoamColor1: {r: 0.5215687, g: 0.8980392, b: 0.8470588, a: 0}
     - _FoamEmitColour: {r: 0, g: 0, b: 0, a: 0}
     - _ShallowColour: {r: 0.9529412, g: 0.7882354, b: 0.5882353, a: 0}
-    - _VeryDeepColour: {r: 0.01176471, g: 0.172549, b: 0.2745098, a: 0}
+    - _VeryDeepColour: {r: 0.27450982, g: 0.10595366, b: 0.011764698, a: 0}
     - _WaterDeepColor: {r: 0, g: 0.435, b: 0.40020004, a: 0}
     - _WaterDeepColor1: {r: 0.04705882, g: 0.3098039, b: 0.1960784, a: 0}
     - _WaterReallyDeepColor: {r: 0, g: 0.17401281, b: 0.277, a: 0}
