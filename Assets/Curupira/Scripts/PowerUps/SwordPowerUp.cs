@@ -11,8 +11,8 @@ public class SwordPowerUp : PickableItem
     public override void PickItem(GameObject picker)
     {
         base.PickItem(picker);
-        gameObject.transform.parent.GetComponent<PowerUpSpawner>().CallOnLevelEnd();
+        //gameObject.transform.parent.GetComponent<PowerUpSpawner>().CallOnLevelEnd();
+       // EventManager.Trigger(GeneralEvents.PowerUpEvents.OnDashUp,3.5f);
     }
-
 
 }
