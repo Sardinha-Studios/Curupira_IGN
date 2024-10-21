@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: PlayerPowerUpvalues
   m_EditorClassIdentifier: 
   dashDistance: 0
+  walkVelocity: 0
+  runVelocity: 0

@@ -6,5 +6,7 @@ using UnityEngine;
 public class PowerUpValues : ScriptableObject
 {
     public float dashDistance = 0;
+    public float walkVelocity = 0;
+    public float runVelocity = 0;
     
 }

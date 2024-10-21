@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveManager: {fileID: 0}
   powerUps:
-  - {fileID: 5230361175512668163, guid: 1999f5ec12eb0804ab07cdae879ab0d0, type: 3}
+  - {fileID: 7554162987360969005, guid: c55ff17535ab7ee4cbf37bc48742592b, type: 3}
   onLevelEnd:
     m_PersistentCalls:
       m_Calls:
