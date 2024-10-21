@@ -15,10 +15,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4037408192260938788, guid: 01d8e15410e97584f809d1d0b2599702,
         type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037408192260938788, guid: 01d8e15410e97584f809d1d0b2599702,
+        type: 3}
       propertyPath: waveDetail.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 50b41309f45ffe04795a1f5e3d75dffe,
         type: 2}
+    - target: {fileID: 4546448439069316196, guid: 01d8e15410e97584f809d1d0b2599702,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546448439069316196, guid: 01d8e15410e97584f809d1d0b2599702,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6745855231417339356, guid: 01d8e15410e97584f809d1d0b2599702,
         type: 3}
       propertyPath: m_Name
@@ -83,5 +98,66 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1211145853384587379, guid: 01d8e15410e97584f809d1d0b2599702, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3540904376258648242, guid: 01d8e15410e97584f809d1d0b2599702,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3918023648032399535}
+    - targetCorrespondingSourceObject: {fileID: 3540904376258648242, guid: 01d8e15410e97584f809d1d0b2599702,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 414363441023543665}
   m_SourcePrefab: {fileID: 100100000, guid: 01d8e15410e97584f809d1d0b2599702, type: 3}
+--- !u!1 &7093547751396467192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3540904376258648242, guid: 01d8e15410e97584f809d1d0b2599702,
+    type: 3}
+  m_PrefabInstance: {fileID: 6004012838568606026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3918023648032399535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093547751396467192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0e54961a67f854d89f925b368782d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 414363441023543665}
+        m_TargetAssemblyTypeName: MoreMountains.Tools.MMLoadScene, MoreMountains.Tools
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &414363441023543665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093547751396467192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9251a9f35d2c384a9e26195e0c63ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Lobby
+  LoadingSceneMode: 1
